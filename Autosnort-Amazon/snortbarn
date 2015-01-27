@@ -36,7 +36,7 @@ OPTIONS2="-c snort_basedir/etc/barnyard2.conf -d /var/log/snort -f snort.u2 -w /
 do_start()
 {
     echo "Starting Snort and Barnyard" 
-    /sbin/ifconfig snort_iface up -arp -multicast promisc
+    /sbin/ifconfig snort_iface up promisc
     $SNORTD $OPTIONS
 	if [ $? -eq 0 ]; then
 		echo "Snort successfully started."
